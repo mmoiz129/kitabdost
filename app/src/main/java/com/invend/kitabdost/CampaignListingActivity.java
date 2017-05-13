@@ -44,7 +44,7 @@ public class CampaignListingActivity extends AppCompatActivity {
 
         this.initUI();
 
-        this.create.setOnClickListener(new View.OnClickListener() {
+        create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(CampaignListingActivity.this, CreateCampaign.class);

@@ -27,6 +27,11 @@
         <activity
             android:name=".CampaignListingActivity"
             android:label="@string/title_activity_campaign_listing" />
+
+        <activity
+            android:name=".CreateCampaign"
+            android:label="@string/title_activity_create_campaign" />
+
         <activity
             android:name=".CampaignDetailActivity"
             android:label="@string/title_activity_campaign_detail"
