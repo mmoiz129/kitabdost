@@ -1,5 +1,6 @@
 package com.invend.kitabdost;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 public class CampaignViewHolder extends RecyclerView.ViewHolder {
     public TextView campaignName, createdBy, endDate, amountReceived, amountTotal;
     public ProgressBar progressBar;
+    public CardView cardView;
 
     public CampaignViewHolder(View itemView) {
         super(itemView);
@@ -21,6 +23,7 @@ public class CampaignViewHolder extends RecyclerView.ViewHolder {
         amountReceived = (TextView) itemView.findViewById(R.id.amountReceived);
         amountTotal = (TextView) itemView.findViewById(R.id.amountTotal);
         progressBar = (ProgressBar) itemView.findViewById(R.id.progress);
+        cardView = (CardView) itemView.findViewById(R.id.cardView);
 
     }
 }
