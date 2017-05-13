@@ -1,6 +1,7 @@
 package com.invend.kitabdost;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -33,6 +34,14 @@ public class HomeActivity extends AppCompatActivity {
         create = (Button) findViewById(R.id.createCampaign);
 
         this.initUI();
+
+        this.create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, CreateCampaign.class);
+                startActivity(i);
+            }
+        });
 
     }
 
