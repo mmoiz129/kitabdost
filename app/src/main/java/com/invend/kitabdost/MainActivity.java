@@ -1,5 +1,6 @@
 package com.invend.kitabdost;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -38,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void startHomeActivity() {
 
-//        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE).edit();
-//
-//        if (trusty.isChecked()) {
-//
-//            editor.putBoolean(getString(R.string.isTrusty), true);
-//        } else {
-//            editor.putBoolean(getString(R.string.isTrusty), false);
-//        }
+        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE).edit();
 
-    //    editor.commit();
+        if (trusty.isChecked()) {
+
+            editor.putBoolean(getString(R.string.isTrusty), true);
+        } else {
+            editor.putBoolean(getString(R.string.isTrusty), false);
+        }
+
+        editor.commit();
         Intent i = new Intent(this, CampaignListingActivity.class);
         startActivity(i);
     }

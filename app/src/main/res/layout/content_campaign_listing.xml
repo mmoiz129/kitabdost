@@ -10,6 +10,13 @@
     android:orientation="vertical"
     tools:context="com.invend.kitabdost.CampaignListingActivity">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Campaign"
+        android:id="@+id/createCampaign"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/campaignList"
         android:layout_width="match_parent"

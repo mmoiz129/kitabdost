@@ -6,6 +6,13 @@ package models;
 
 public class Campaign {
 
+    public String name;
+    public String imageId;
+    public long totalAmount;
+    public long amountReceived;
+    public String description;
+    public String endDate;
+
     public String getName() {
         return name;
     }
@@ -46,11 +53,14 @@ public class Campaign {
         this.description = description;
     }
 
-    public String name;
-    public String imageId;
-    public long totalAmount;
-    public long amountReceived;
-    public String description;
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public String getCampaignName() {
         return campaignName;

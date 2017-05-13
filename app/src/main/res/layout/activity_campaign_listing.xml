@@ -7,6 +7,7 @@
     tools:context="com.invend.kitabdost.CampaignListingActivity">
 
 
+
     <include layout="@layout/content_campaign_listing" />
 
     <android.support.design.widget.FloatingActionButton

@@ -29,6 +29,10 @@
             android:name=".CampaignListingActivity"
             android:label="@string/title_activity_campaign_listing"></activity>
 
+        <activity
+            android:name=".CreateCampaign"
+            android:label="@string/title_activity_create_campaign"></activity>
+
     </application>
 
 </manifest>

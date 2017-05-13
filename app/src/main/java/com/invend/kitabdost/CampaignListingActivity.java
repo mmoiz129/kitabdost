@@ -1,5 +1,7 @@
 package com.invend.kitabdost;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -24,10 +27,30 @@ public class CampaignListingActivity extends AppCompatActivity {
     private LinearLayoutManager mLinearLayoutManager;
     ArrayList<Campaign> campaignArrayList = new ArrayList();
 
+    boolean isTrusty;
+    Button create;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_campaign_listing);
+
+
+        SharedPreferences prefs = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE);
+        this.isTrusty = prefs.getBoolean(getString(R.string.isTrusty), false);
+
+        create = (Button) findViewById(R.id.createCampaign);
+
+        this.initUI();
+
+        this.create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CampaignListingActivity.this, CreateCampaign.class);
+                startActivity(i);
+            }
+        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +77,14 @@ public class CampaignListingActivity extends AppCompatActivity {
             }
         };
         campaignList.setAdapter(mFirebaseAdapter);
+    }
+
+    public void initUI() {
+        if(this.isTrusty) {
+            create.setVisibility(View.VISIBLE);
+        } else {
+            create.setVisibility(View.GONE);
+        }
     }
 
 }
