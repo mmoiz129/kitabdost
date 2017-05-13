@@ -1,19 +1,22 @@
 package com.invend.kitabdost;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import utils.PrivateSharedPreferencesManager;
 
 public class MainActivity extends AppCompatActivity {
     Button loginButton;
     TextView signInTextView;
     EditText email, password;
+    CheckBox trusty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,37 +24,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         loginButton = (Button) findViewById(R.id.loginButton);
         signInTextView = (TextView) findViewById(R.id.signInTextView);
-
+        trusty = (CheckBox) findViewById(R.id.trusty);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startHomeActivity();
             }
         });
-
         signInTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startSignUpActivity();
             }
         });
+
     }
 
     private void startHomeActivity() {
 
+        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE).edit();
 
+        if (trusty.isChecked()) {
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+            editor.putBoolean(getString(R.string.isTrusty), true);
+        } else {
+            editor.putBoolean(getString(R.string.isTrusty), false);
+        }
 
-        myRef.setValue("Hello, World!");
+        editor.commit();
         Intent i = new Intent(this, HomeActivity.class);
         startActivity(i);
     }
 
     private void startSignUpActivity() {
-//        Intent i = new Intent(this, SingUpScreen.class);
-//        startActivity(i);
+        Intent i = new Intent(this, SignUpActivity.class);
+        startActivity(i);
 
     }
 }

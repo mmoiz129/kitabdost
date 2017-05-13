@@ -78,6 +78,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true" />
+
     </android.support.design.widget.TextInputLayout>
 
 
@@ -88,8 +89,8 @@
         android:text="Sign Up As" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="100dp"
+        android:id="@+id/type"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:entries="@array/array_roles">
@@ -97,7 +98,40 @@
 
     </Spinner>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/orginazationName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Orginazation Name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/cuinNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CUIN#"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
     <Button
+        android:id="@+id/signup"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
