@@ -71,8 +71,8 @@ public class CampaignListingActivity extends AppCompatActivity {
             protected void populateViewHolder(CampaignViewHolder viewHolder, final Campaign campaign, final int position) {
                 if (campaign != null) {
                     Log.e("::uzair", position + "");
-                    viewHolder.progressBar.setMax((int) campaign.getTotalAmount());
-                    viewHolder.progressBar.setProgress((int) campaign.getAmountReceived() );
+                    viewHolder.progressBar.setMax(100);
+                    viewHolder.progressBar.setProgress( (int) calculateProgress( (int) campaign.getAmountReceived()) );
                     viewHolder.campaignName.setText(campaign.getCampaignName());
                     viewHolder.amountReceived.setText(String.valueOf(campaign.getAmountReceived()));
                     viewHolder.createdBy.setText(campaign.getName());
@@ -92,6 +92,12 @@ public class CampaignListingActivity extends AppCompatActivity {
             }
         };
         campaignList.setAdapter(mFirebaseAdapter);
+    }
+
+    public int calculateProgress(int amount) {
+
+        return amount / 100;
+
     }
 
     public void initUI() {
