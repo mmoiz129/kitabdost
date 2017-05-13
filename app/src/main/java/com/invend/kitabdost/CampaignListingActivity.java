@@ -1,6 +1,7 @@
 package com.invend.kitabdost;
 
 import android.content.Intent;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -67,13 +68,23 @@ public class CampaignListingActivity extends AppCompatActivity {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Campaign, CampaignViewHolder>(Campaign.class, R.layout.campaign_item,
                 CampaignViewHolder.class, databaseReference.child("Campaigns")) {
             @Override
-            protected void populateViewHolder(CampaignViewHolder viewHolder, Campaign campaign, int position) {
+            protected void populateViewHolder(CampaignViewHolder viewHolder, final Campaign campaign, final int position) {
                 if (campaign != null) {
                     Log.e("::uzair", position + "");
                     viewHolder.campaignName.setText(campaign.getCampaignName());
                     viewHolder.amountReceived.setText(String.valueOf(campaign.getAmountReceived()));
                     viewHolder.createdBy.setText(campaign.getName());
+                    Log.e("hello world", mFirebaseAdapter.getRef(position).getKey());
                 }
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Campaign campaign1 = mFirebaseAdapter.getItem(position);
+                        campaign1.setKey(mFirebaseAdapter.getRef(position).getKey());
+                        startDetailActivity(campaign1);
+                        Log.e("i m clicked", position + "");
+                    }
+                });
             }
         };
         campaignList.setAdapter(mFirebaseAdapter);
@@ -87,4 +98,9 @@ public class CampaignListingActivity extends AppCompatActivity {
         }
     }
 
+    public void startDetailActivity(Campaign campaign) {
+        Intent i = new Intent(this, CampaignDetailActivity.class);
+        i.putExtra("campaign", campaign);
+        startActivity(i);
+    }
 }

@@ -12,6 +12,7 @@ public class Campaign {
     public long amountReceived;
     public String description;
     public String endDate;
+    public String key="";
 
     public String getName() {
         return name;
@@ -71,4 +72,11 @@ public class Campaign {
     }
 
     public String campaignName;
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

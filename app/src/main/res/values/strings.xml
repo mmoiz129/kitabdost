@@ -16,4 +16,5 @@
     </string-array>
     <string name="title_activity_campaign_listing">CampaignListingActivity</string>
     <string name="title_activity_create_campaign">Create Campaign</string>
+    <string name="title_activity_campaign_detail">CampaignDetailActivity</string>
 </resources>
