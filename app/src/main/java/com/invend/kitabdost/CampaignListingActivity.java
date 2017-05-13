@@ -101,7 +101,7 @@ public class CampaignListingActivity extends AppCompatActivity {
     }
 
     public void initUI() {
-        if(this.isTrusty) {
+        if (this.isTrusty) {
             create.setVisibility(View.VISIBLE);
         } else {
             create.setVisibility(View.GONE);
