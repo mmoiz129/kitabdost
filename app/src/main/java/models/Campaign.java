@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 /**
  * Created by Venturedive on 13/05/2017.
  */
 
-public class Campaign {
+public class Campaign implements Serializable{
 
     public String name;
     public String imageId;
@@ -12,6 +14,7 @@ public class Campaign {
     public long amountReceived;
     public String description;
     public String endDate;
+    public String key="";
 
     public String getName() {
         return name;
@@ -71,4 +74,11 @@ public class Campaign {
     }
 
     public String campaignName;
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

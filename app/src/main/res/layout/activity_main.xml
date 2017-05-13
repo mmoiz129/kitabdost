@@ -9,6 +9,12 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:srcCompat="@mipmap/logo_kb"
+        android:id="@+id/imageView2" />
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,7 +32,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="10dp">
 
         <EditText
 
@@ -45,13 +51,17 @@
         android:text="As a Trusty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:id="@+id/trusty" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="login" />
+        android:layout_marginTop="10dp"
+        android:text="login"
+        android:background="@color/colorPrimaryLight"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/signInTextView"

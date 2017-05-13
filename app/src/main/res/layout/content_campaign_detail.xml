@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
+        <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,23 +26,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
+        <TextView
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:hint="Description"
-            android:lines="8"
-            android:minLines="4"
             android:gravity="top|left"
-            android:maxLines="10" />
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:maxLines="10"
+            android:minLines="4" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
+        <TextView
             android:id="@+id/campaignName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,8 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="End Date"
-            android:background="@color/colorPrimaryLight"
-            android:textColor="@color/white"/>
+            />
 
     </android.support.design.widget.TextInputLayout>
 

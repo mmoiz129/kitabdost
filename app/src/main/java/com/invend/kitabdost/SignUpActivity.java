@@ -22,16 +22,11 @@ public class SignUpActivity extends AppCompatActivity {
     Spinner type;
     Button signup;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         type = (Spinner) findViewById(R.id.type);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         cuicNum = (EditText) findViewById(R.id.cuinNum);
         orginazationName = (EditText) findViewById(R.id.orginazationName);
