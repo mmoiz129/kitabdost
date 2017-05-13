@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     Button loginButton;
     TextView signInTextView;
+    EditText email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startHomeActivity() {
-//        Intent i = new Intent(this, HomeScreen.class);
-//        startActivity(i);
+
+
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
+        Intent i = new Intent(this, HomeActivity.class);
+        startActivity(i);
     }
 
     private void startSignUpActivity() {

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "817283132532",
+    "firebase_url": "https://kitabdost-89bae.firebaseio.com",
+    "project_id": "kitabdost-89bae",
+    "storage_bucket": "kitabdost-89bae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817283132532:android:84055c79fec25318",
+        "android_client_info": {
+          "package_name": "com.invend.kitabdost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817283132532-k2iv6u2efki9jeq9qf6fqucd3eifp8re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOchJZjCU4YBKjUX_4Fx0__HMdeHB08bc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
