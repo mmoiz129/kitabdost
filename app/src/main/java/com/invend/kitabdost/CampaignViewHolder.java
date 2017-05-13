@@ -20,6 +20,7 @@ public class CampaignViewHolder extends RecyclerView.ViewHolder {
         endDate = (TextView) itemView.findViewById(R.id.endDate);
         amountReceived = (TextView) itemView.findViewById(R.id.amountReceived);
         amountTotal = (TextView) itemView.findViewById(R.id.amountTotal);
+        progressBar = (ProgressBar) itemView.findViewById(R.id.progress);
 
     }
 }

@@ -70,9 +70,12 @@ public class CampaignListingActivity extends AppCompatActivity {
             protected void populateViewHolder(CampaignViewHolder viewHolder, Campaign campaign, int position) {
                 if (campaign != null) {
                     Log.e("::uzair", position + "");
+                    viewHolder.progressBar.setMax((int) campaign.getTotalAmount());
+                    viewHolder.progressBar.setProgress((int) campaign.getAmountReceived() );
                     viewHolder.campaignName.setText(campaign.getCampaignName());
                     viewHolder.amountReceived.setText(String.valueOf(campaign.getAmountReceived()));
                     viewHolder.createdBy.setText(campaign.getName());
+                    viewHolder.amountTotal.setText( String.valueOf(campaign.getTotalAmount())  );
                 }
             }
         };
