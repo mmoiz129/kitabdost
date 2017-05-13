@@ -1,7 +1,5 @@
 package com.invend.kitabdost;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,8 +7,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import utils.PrivateSharedPreferencesManager;
 
 public class MainActivity extends AppCompatActivity {
     Button loginButton;
@@ -42,17 +38,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void startHomeActivity() {
 
-        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE).edit();
+//        SharedPreferences.Editor editor = getSharedPreferences(getString(R.string.preference_file_key), MODE_PRIVATE).edit();
+//
+//        if (trusty.isChecked()) {
+//
+//            editor.putBoolean(getString(R.string.isTrusty), true);
+//        } else {
+//            editor.putBoolean(getString(R.string.isTrusty), false);
+//        }
 
-        if (trusty.isChecked()) {
-
-            editor.putBoolean(getString(R.string.isTrusty), true);
-        } else {
-            editor.putBoolean(getString(R.string.isTrusty), false);
-        }
-
-        editor.commit();
-        Intent i = new Intent(this, HomeActivity.class);
+    //    editor.commit();
+        Intent i = new Intent(this, CampaignListingActivity.class);
         startActivity(i);
     }
 

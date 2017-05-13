@@ -51,4 +51,14 @@ public class Campaign {
     public long totalAmount;
     public long amountReceived;
     public String description;
+
+    public String getCampaignName() {
+        return campaignName;
+    }
+
+    public void setCampaignName(String campaignName) {
+        this.campaignName = campaignName;
+    }
+
+    public String campaignName;
 }

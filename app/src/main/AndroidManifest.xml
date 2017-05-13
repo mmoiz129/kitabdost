@@ -21,10 +21,14 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
+
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up" />
-        <activity android:name=".CreateCampaign"></activity>
+        <activity
+            android:name=".CampaignListingActivity"
+            android:label="@string/title_activity_campaign_listing"></activity>
+
     </application>
 
 </manifest>
