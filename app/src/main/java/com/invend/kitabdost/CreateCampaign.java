@@ -4,16 +4,14 @@ package com.invend.kitabdost;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,8 +22,8 @@ import models.Campaign;
 public class CreateCampaign extends AppCompatActivity {
 
     Button endDateButton, signupButton;
-    public static TextView endDateTV;
-    public EditText name, description, campaignName, totalAmount;
+    public static EditText endDateTV;
+    public EditText name, description, campaignName, totalAmount, accountNumber;
 
     Campaign campaign;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -38,15 +36,15 @@ public class CreateCampaign extends AppCompatActivity {
 
         campaign = new Campaign();
 
-        endDateButton = (Button) findViewById(R.id.endDateButton);
-        endDateTV = (TextView) findViewById(R.id.endDateTV);
+        //endDateButton = (Button) findViewById(R.id.endDateButton);
+        endDateTV = (EditText) findViewById(R.id.endDateTV);
+        accountNumber = (EditText) findViewById(R.id.accountNumber);
 
         name = (EditText) findViewById(R.id.name);
         description = (EditText) findViewById(R.id.description);
         campaignName = (EditText) findViewById(R.id.campaignName);
         totalAmount = (EditText) findViewById(R.id.totalAmount);
         signupButton = (Button) findViewById(R.id.signup);
-
 
 
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +56,7 @@ public class CreateCampaign extends AppCompatActivity {
             }
         });
 
-        endDateButton.setOnClickListener(new View.OnClickListener() {
+        endDateTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -76,9 +74,9 @@ public class CreateCampaign extends AppCompatActivity {
         campaign.setCampaignName(campaignName.getText().toString());
         campaign.setName(name.getText().toString());
         campaign.setDescription(description.getText().toString());
-        campaign.setTotalAmount( Long.parseLong(totalAmount.getText().toString()) );
+        campaign.setTotalAmount(Long.parseLong(totalAmount.getText().toString()));
         campaign.setEndDate(endDateTV.getText().toString());
-
+        campaign.setAccountNumber(accountNumber.getText().toString());
         databaseReference.child(CHILD).push().setValue(campaign);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -115,8 +113,6 @@ public class CreateCampaign extends AppCompatActivity {
             endDateTV.setText(day + "/" + month + "/" + year);
         }
     }
-
-
 
 
 }

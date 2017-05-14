@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -28,10 +29,12 @@ public class CampaignDetailActivity extends AppCompatActivity {
     public Button donateButton;
     public ProgressBar progressBar;
     public CardView cardView;
+    public ImageView imageView;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     DatabaseReference childReference = databaseReference.child("Campaigns");
     Map<String, Object> campaignUpdate = new HashMap<String, Object>();
     long amountRec;
+    int mod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +51,15 @@ public class CampaignDetailActivity extends AppCompatActivity {
         donateButton = (Button) findViewById(R.id.donateButton);
         //donationAmount = (EditText) findViewById(R.id.donationAmount);
         description = (TextView) findViewById(R.id.description);
+        imageView = (ImageView) findViewById(R.id.imageView3);
 
 
         campaign = (Campaign) getIntent().getSerializableExtra("campaign");
+        mod = getIntent().getIntExtra("mod", 0);
         campaignName.setText(campaign.getCampaignName());
         createdBy.setText("by " + campaign.getName());
         amountRec = campaign.getAmountReceived();
+        renderImage();
         amountReceived.setText("PKR " + String.valueOf(campaign.getAmountReceived()));
         description.setText(campaign.getDescription());
         amountTotal.setText("/ PKR " + String.valueOf(campaign.totalAmount));
@@ -127,5 +133,14 @@ public class CampaignDetailActivity extends AppCompatActivity {
         AlertDialog b = dialogBuilder.create();
         b.show();
 
+    }
+
+    private void renderImage() {
+        if (mod == 0)
+            imageView.setImageResource(R.drawable.books);
+        else if (mod == 1)
+            imageView.setImageResource(R.drawable.furniture);
+        else
+            imageView.setImageResource(R.drawable.stationary);
     }
 }

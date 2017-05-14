@@ -6,7 +6,14 @@ import java.io.Serializable;
  * Created by Venturedive on 13/05/2017.
  */
 
-public class Campaign implements Serializable{
+public class Campaign implements Serializable {
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public String name;
     public String imageId;
@@ -14,7 +21,8 @@ public class Campaign implements Serializable{
     public long amountReceived;
     public String description;
     public String endDate;
-    public String key="";
+    public String key = "";
+    public String accountNumber = "";
 
     public String getName() {
         return name;
@@ -74,6 +82,7 @@ public class Campaign implements Serializable{
     }
 
     public String campaignName;
+
     public String getKey() {
         return key;
     }

@@ -16,7 +16,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"
+            android:hint="NGO Name"
             android:inputType="text"
             android:maxLines="1"
             android:singleLine="true" />
@@ -30,12 +30,12 @@
             android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:hint="Description"
-            android:lines="8"
-            android:minLines="4"
             android:gravity="top|left"
-            android:maxLines="10" />
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:maxLines="10"
+            android:minLines="4" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -67,33 +67,45 @@
             android:singleLine="true" />
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/accountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Account Number"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/endDateTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/endDateButton"
+        <EditText
+            android:id="@+id/endDateTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="End Date"
-            android:background="@color/colorPrimaryLight"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="10dp"
+            android:hint="End Date" />
 
     </android.support.design.widget.TextInputLayout>
 
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="80dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Sign in" />
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:text="Create Campaign"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

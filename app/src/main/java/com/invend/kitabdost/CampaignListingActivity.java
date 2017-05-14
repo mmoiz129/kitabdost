@@ -45,7 +45,7 @@ public class CampaignListingActivity extends AppCompatActivity {
         this.isTrusty = prefs.getBoolean(getString(R.string.isTrusty), false);
         create = (Button) findViewById(R.id.createCampaign);
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner = (ProgressBar) findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -71,12 +71,20 @@ public class CampaignListingActivity extends AppCompatActivity {
                 if (campaign != null) {
                     Log.e("::uzair", position + "");
                     viewHolder.progressBar.setMax(100);
-                    viewHolder.progressBar.setProgress( (int) calculateProgress( (int)campaign.getTotalAmount() ,(int)campaign.getAmountReceived()) );
+                    viewHolder.progressBar.setProgress((int) calculateProgress((int) campaign.getTotalAmount(), (int) campaign.getAmountReceived()));
                     viewHolder.campaignName.setText(campaign.getCampaignName());
                     viewHolder.amountReceived.setText("PKR " + String.valueOf(campaign.getAmountReceived()));
                     viewHolder.createdBy.setText("by " + campaign.getName());
                     viewHolder.amountTotal.setText( "/ PKR " + String.valueOf(campaign.getTotalAmount())  );
                     viewHolder.description.setText(campaign.getDescription());
+                    int mod = position % 3;
+                    if (mod == 0)
+                        viewHolder.imageView.setImageResource(R.drawable.books);
+                    else if (mod == 1)
+                        viewHolder.imageView.setImageResource(R.drawable.furniture);
+                    else
+                        viewHolder.imageView.setImageResource(R.drawable.stationary);
+
                     Log.e("hello world", mFirebaseAdapter.getRef(position).getKey());
 
                 }
@@ -85,7 +93,8 @@ public class CampaignListingActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         Campaign campaign1 = mFirebaseAdapter.getItem(position);
                         campaign1.setKey(mFirebaseAdapter.getRef(position).getKey());
-                        startDetailActivity(campaign1);
+                        int mod = position % 3;
+                        startDetailActivity(campaign1,mod);
                         Log.e("i m clicked", position + "");
                     }
                 });
@@ -97,11 +106,11 @@ public class CampaignListingActivity extends AppCompatActivity {
     }
 
     public int calculateProgress(int total, int amount) {
-        if(total != 0 && amount != 0) {
+        if (total != 0 && amount != 0) {
 
             double _amount = Double.valueOf("" + amount);
             double _total = Double.valueOf("" + total);
-            Double ans=  ( _amount / _total ) ;
+            Double ans = (_amount / _total);
             Double percentage = ans * 100;
 
 
@@ -123,9 +132,10 @@ public class CampaignListingActivity extends AppCompatActivity {
         }
     }
 
-    public void startDetailActivity(Campaign campaign) {
+    public void startDetailActivity(Campaign campaign, int mod) {
         Intent i = new Intent(this, CampaignDetailActivity.class);
         i.putExtra("campaign", campaign);
+        i.putExtra("mod", mod);
         startActivity(i);
     }
 }
