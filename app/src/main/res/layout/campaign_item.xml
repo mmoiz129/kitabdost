@@ -37,8 +37,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="95dp"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
                     android:src="@drawable/ic_menu_camera" />
 
 
@@ -58,7 +58,7 @@
                         android:textSize="20sp"
                         android:text="Campaign Name"
                         android:textColor="@android:color/black"
-                        android:alpha="191"/>
+                        android:alpha="0.75"/>
 
                     <TextView
                         android:id="@+id/createdBy"
@@ -67,16 +67,20 @@
                         android:text="NGO CYZ"
                         android:textSize="14sp"
                         android:textColor="@android:color/black"
-                        android:alpha="127"/>
+                        android:alpha="0.5"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="description"
                         android:textSize="14sp"
+                        android:id="@+id/description"
                         android:textColor="@android:color/black"
-                        android:alpha="191"
-                        android:layout_marginTop="8dp"/>
+                        android:alpha="0.75"
+                        android:layout_marginTop="2dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:singleLine="false"/>
 
                     <!--<TextView-->
 
@@ -151,7 +155,7 @@
                         android:layout_weight="1"
                         android:text="/30,000"
                         android:textSize="12sp"
-                        android:alpha="191"
+                        android:alpha="0.5"
                         android:textColor="@android:color/black"
                         android:layout_alignBottom="@+id/amountReceived" />
 
@@ -161,9 +165,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="30 days remaining"
+                        android:text="30 days to go"
                         android:textColor="@android:color/black"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:alpha="0.75"/>
 
 
 

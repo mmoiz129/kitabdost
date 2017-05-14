@@ -47,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/campaignName"
@@ -58,7 +58,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="4"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:text="Campaign Name"
                 android:alpha="0.75"/>
 
@@ -68,16 +68,18 @@
                 android:layout_height="wrap_content"
                 android:text="NGO CYZ"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:alpha="0.5"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/description"
-                android:textSize="14sp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
                 android:alpha="0.75"
-                android:text="description"/>
+                android:text="description"
+                android:layout_marginTop="3dp"/>
 
             <ProgressBar
                 android:id="@+id/progress"
@@ -96,6 +98,8 @@
             android:layout_width="match_parent"
             android:paddingBottom="10dp"
             android:layout_height="match_parent"
+
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp">
 
@@ -129,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="30 days remaining"
+                android:text="30 days to go"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"/>
 

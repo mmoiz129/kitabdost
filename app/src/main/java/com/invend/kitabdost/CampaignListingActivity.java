@@ -73,9 +73,10 @@ public class CampaignListingActivity extends AppCompatActivity {
                     viewHolder.progressBar.setMax(100);
                     viewHolder.progressBar.setProgress( (int) calculateProgress( (int)campaign.getTotalAmount() ,(int)campaign.getAmountReceived()) );
                     viewHolder.campaignName.setText(campaign.getCampaignName());
-                    viewHolder.amountReceived.setText(String.valueOf(campaign.getAmountReceived()));
-                    viewHolder.createdBy.setText(campaign.getName());
-                    viewHolder.amountTotal.setText( "/" + String.valueOf(campaign.getTotalAmount())  );
+                    viewHolder.amountReceived.setText("PKR " + String.valueOf(campaign.getAmountReceived()));
+                    viewHolder.createdBy.setText("by " + campaign.getName());
+                    viewHolder.amountTotal.setText( "/ PKR " + String.valueOf(campaign.getTotalAmount())  );
+                    viewHolder.description.setText(campaign.getDescription());
                     Log.e("hello world", mFirebaseAdapter.getRef(position).getKey());
 
                 }

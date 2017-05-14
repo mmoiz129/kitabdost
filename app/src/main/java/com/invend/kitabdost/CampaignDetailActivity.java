@@ -22,7 +22,7 @@ import models.Campaign;
 
 public class CampaignDetailActivity extends AppCompatActivity {
     Campaign campaign;
-    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal;
+    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal,description;
     public EditText donationAmount;
     public Button donateButton;
     public ProgressBar progressBar;
@@ -46,15 +46,16 @@ public class CampaignDetailActivity extends AppCompatActivity {
         cardView = (CardView) findViewById(R.id.cardView);
         donateButton = (Button) findViewById(R.id.donateButton);
         donationAmount = (EditText) findViewById(R.id.donationAmount);
-
+        description = (TextView) findViewById(R.id.description);
 
 
         campaign = (Campaign) getIntent().getSerializableExtra("campaign");
         campaignName.setText(campaign.getCampaignName());
-        createdBy.setText(campaign.getName());
+        createdBy.setText("by " + campaign.getName());
         amountRec = campaign.getAmountReceived();
-        amountReceived.setText(String.valueOf(campaign.getAmountReceived()));
-        amountTotal.setText(String.valueOf(campaign.totalAmount));
+        amountReceived.setText("PKR " + String.valueOf(campaign.getAmountReceived()));
+        description.setText(campaign.getDescription());
+        amountTotal.setText("/ PKR " + String.valueOf(campaign.totalAmount));
         childReference = childReference.child(campaign.getKey());
         donateButton.setOnClickListener(new View.OnClickListener() {
             @Override

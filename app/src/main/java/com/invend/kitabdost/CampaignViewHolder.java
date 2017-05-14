@@ -11,7 +11,7 @@ import android.widget.TextView;
  */
 
 public class CampaignViewHolder extends RecyclerView.ViewHolder {
-    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal;
+    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal,description;
     public ProgressBar progressBar;
     public CardView cardView;
 
@@ -23,6 +23,7 @@ public class CampaignViewHolder extends RecyclerView.ViewHolder {
         amountReceived = (TextView) itemView.findViewById(R.id.amountReceived);
         amountTotal = (TextView) itemView.findViewById(R.id.amountTotal);
         progressBar = (ProgressBar) itemView.findViewById(R.id.progress);
+        description = (TextView) itemView.findViewById(R.id.description);
         cardView = (CardView) itemView.findViewById(R.id.cardView);
 
     }
