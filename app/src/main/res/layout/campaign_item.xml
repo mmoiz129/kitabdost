@@ -12,17 +12,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical">
 
         <android.support.v7.widget.CardView
-            android:transitionName="profile"
-          android:id="@+id/cardView"
+            android:transitionName="detail"
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            card_view:cardCornerRadius="2dp"
+            android:layout_marginTop="8dp"
+            card_view:cardCornerRadius="6dp"
             card_view:cardElevation="2dp"
             card_view:cardUseCompatPadding="true">
 
@@ -31,73 +31,86 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
                     android:src="@drawable/ic_menu_camera" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="7dp">
-
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/campaignName"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="4"
-                        android:text="Campaign Name" />
+                        android:textSize="20sp"
+                        android:text="Campaign Name"
+                        android:textColor="@android:color/black"
+                        android:alpha="191"/>
 
+                    <TextView
+                        android:id="@+id/createdBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NGO CYZ"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:alpha="127"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="description"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:alpha="191"
+                        android:layout_marginTop="8dp"/>
+
+                    <!--<TextView-->
+
+                        <!--android:id="@+id/amountReceived"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!---->
+                        <!--android:text="PKR 10,000" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:text="of" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/amountTotal"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text="PKR 30,000" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/endDate"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:text="30 days remaining" />-->
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/createdBy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
-                    android:text="NGO CYZ" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginRight="7dp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-
-                        android:id="@+id/amountReceived"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="PKR 10,000" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="of" />
-
-                    <TextView
-                        android:id="@+id/amountTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:text="PKR 30,000" />
-
-                    <TextView
-                        android:id="@+id/endDate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="30 days remaining" />
-
-                </LinearLayout>
+            </LinearLayout>
 
                 <ProgressBar
                     android:id="@+id/progress"
@@ -106,13 +119,58 @@
                     android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginRight="7dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     android:max="100"
                     android:progress="45" />
 
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:paddingBottom="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
 
+                    <TextView
+                        android:id="@+id/amountReceived"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="PKR 3200"
+                        android:textSize="18sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:id="@+id/amountTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_toEndOf="@id/amountReceived"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:text="/30,000"
+                        android:textSize="12sp"
+                        android:alpha="191"
+                        android:textColor="@android:color/black"
+                        android:layout_alignBottom="@+id/amountReceived" />
+
+                    <TextView
+                        android:id="@+id/endDate"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="30 days remaining"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"/>
+
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
     </LinearLayout>

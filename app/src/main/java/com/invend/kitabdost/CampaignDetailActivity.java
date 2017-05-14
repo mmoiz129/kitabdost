@@ -47,14 +47,7 @@ public class CampaignDetailActivity extends AppCompatActivity {
         donateButton = (Button) findViewById(R.id.donateButton);
         donationAmount = (EditText) findViewById(R.id.donationAmount);
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
 
         campaign = (Campaign) getIntent().getSerializableExtra("campaign");
         campaignName.setText(campaign.getCampaignName());
