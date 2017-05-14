@@ -24,7 +24,7 @@ import models.Campaign;
 
 public class CampaignDetailActivity extends AppCompatActivity {
     Campaign campaign;
-    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal,description;
+    public TextView campaignName, createdBy, endDate, amountReceived, amountTotal, description;
     public EditText donateAmountET;
     public Button donateButton;
     public ProgressBar progressBar;
@@ -42,6 +42,7 @@ public class CampaignDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_campaign_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         campaignName = (TextView) findViewById(R.id.campaignName);
         createdBy = (TextView) findViewById(R.id.createdBy);
         endDate = (TextView) findViewById(R.id.endDate);
@@ -52,9 +53,12 @@ public class CampaignDetailActivity extends AppCompatActivity {
         //donationAmount = (EditText) findViewById(R.id.donationAmount);
         description = (TextView) findViewById(R.id.description);
         imageView = (ImageView) findViewById(R.id.imageView3);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
 
 
         campaign = (Campaign) getIntent().getSerializableExtra("campaign");
+        progressBar.setMax(100);
+        progressBar.setProgress((int) calculateProgress((int) campaign.getTotalAmount(), (int) campaign.getAmountReceived()));
         mod = getIntent().getIntExtra("mod", 0);
         campaignName.setText(campaign.getCampaignName());
         createdBy.setText("by " + campaign.getName());
@@ -103,7 +107,7 @@ public class CampaignDetailActivity extends AppCompatActivity {
         donateAmountET = (EditText) dialogView.findViewById(R.id.amountDonate);
 
         dialogBuilder.setTitle("Donate Now");
-        dialogBuilder.setMessage("Account Number");
+        dialogBuilder.setMessage("To Account Number : " + campaign.getAccountNumber());
         dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -142,5 +146,22 @@ public class CampaignDetailActivity extends AppCompatActivity {
             imageView.setImageResource(R.drawable.furniture);
         else
             imageView.setImageResource(R.drawable.stationary);
+    }
+
+    public int calculateProgress(int total, int amount) {
+        if (total != 0 && amount != 0) {
+
+            double _amount = Double.valueOf("" + amount);
+            double _total = Double.valueOf("" + total);
+            Double ans = (_amount / _total);
+            Double percentage = ans * 100;
+
+
+            return percentage.intValue();
+
+        } else {
+            return 0;
+        }
+
     }
 }

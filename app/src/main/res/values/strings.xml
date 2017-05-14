@@ -14,7 +14,12 @@
         <item>Organization</item>
         <item>Individual</item>
     </string-array>
-    <string name="title_activity_campaign_listing">CampaignListingActivity</string>
-    <string name="title_activity_create_campaign">Create Campaign</string>
-    <string name="title_activity_campaign_detail">CampaignDetailActivity</string>
+    <string name="title_activity_campaign_listing">Kitab Dost</string>
+    <string name="title_activity_create_campaign">Kitab Dost</string>
+    <string name="title_activity_campaign_detail">Kitab Dost</string>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pager">PagerActivity</string>
 </resources>
